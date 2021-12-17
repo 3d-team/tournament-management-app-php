@@ -44,8 +44,8 @@
 							</div>
 
 							<div class="col-md-9">
-								<form>
-
+								<form method="post" action="{{ route('players.add') }}">
+									@csrf
 									<div class="row">
 										<div class="col">
 											<div class="form-group">
@@ -57,6 +57,12 @@
 													</span>
 												  </div>
 												  <input type="text" name="fullname" class="form-control form-control-lg border-left-0" placeholder="Tên cầu thủ">
+												  
+												  	@error('fullname')
+														<span class="invalid-feedback" role="alert">
+															<strong>{{ $message }}</strong>
+														</span>
+													@enderror	
 												</div>
 											  </div>
 										</div>
@@ -86,7 +92,7 @@
 													  <i class="mdi mdi-account-outline text-primary"></i>
 													</span>
 												  </div>
-												  <input type="text" name="type" class="form-control form-control-lg border-left-0" 
+												  <input type="text" name="position" class="form-control form-control-lg border-left-0" 
 													placeholder="Vị trí thi đấu">
 												</div>
 											  </div>
@@ -101,7 +107,7 @@
 													  <i class="mdi mdi-account-outline text-primary"></i>
 													</span>
 												  </div>
-												  <input type="text" class="form-control form-control-lg border-left-0" 
+												  <input type="text" name="type" class="form-control form-control-lg border-left-0" 
 													placeholder="Vai trò">
 												</div>
 											  </div>
@@ -118,7 +124,7 @@
 													  <i class="mdi mdi-account-outline text-primary"></i>
 													</span>
 												  </div>
-												  <input type="text" class="form-control form-control-lg border-left-0" placeholder="Số điện thoại">
+												  <input type="text" name="phone" class="form-control form-control-lg border-left-0" placeholder="Số điện thoại">
 												</div>
 											  </div>
 										</div>
@@ -132,7 +138,7 @@
 													  <i class="mdi mdi-email-outline text-primary"></i>
 													</span>
 												  </div>
-												  <input type="text" class="form-control form-control-lg border-left-0" 
+												  <input type="text" name="cmnd" class="form-control form-control-lg border-left-0" 
 													placeholder="CMND/CCCD">
 												</div>
 											  </div>
@@ -140,7 +146,7 @@
 									</div>
 					
 									<div class="mt-3 text-center">
-										<button type="button" class="btn btn-success">Lưu</button>
+										<button type="submit" class="btn btn-success">Lưu</button>
 									</div>
 								</form>
 							</div>

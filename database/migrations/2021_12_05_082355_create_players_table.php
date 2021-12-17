@@ -20,6 +20,8 @@ class CreatePlayersTable extends Migration
             $table->string('number');
             $table->string('phone');
             $table->string('type');
+            $table->string('position');
+            $table->string('cmnd');
             $table->timestamps();
         });
     }

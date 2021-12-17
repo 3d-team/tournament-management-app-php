@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tournament;
 use Illuminate\Http\Request;
 
 class TournamentController extends Controller
@@ -16,8 +17,12 @@ class TournamentController extends Controller
         $this->middleware('auth');
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        if ($request->isMethod('post')) {
+            Tournament::create($request->all());
+        }
+
         return view('tournaments.create');
     }
 

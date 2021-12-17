@@ -15,20 +15,26 @@
                 </div>
 
                 <div class="col-md-4 mr-2">
-                    <form>
+                    <form method="post">
+                      @csrf
                         <div class="form-group">
                           <label for="exampleInputEmail1">Tên giải đấu <span class="text-danger"> *</span></label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Giải đấu ABC ...">
+                          <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Giải đấu ABC ...">
                         </div>
 
                         <div class="form-group">
                           <label for="exampleInputPassword1">Địa điểm <span class="text-danger"> *</span></label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Địa điểm tổ chức ...">
+                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Địa điểm tổ chức ...">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleInput2">Hình thức thi đấu <span class="text-danger"> *</span></label>
+                          <input type="text" name="form" class="form-control" id="exampleInput2" placeholder="Hình thức thi đấu ...">
                         </div>
 
                         <div class="form-group ">
                             <label for="quantity">Số lượng đội bóng <span class="text-danger"> *</span></label>
-                            <input type="number" class="form-control" id="team-quantity" aria-describedby="emailHelp" placeholder="0">
+                            <input type="number" name="number_team" class="form-control" id="team-quantity" aria-describedby="emailHelp" placeholder="0">
                           </div>
                         
                         <button type="submit" class="btn btn-primary">Tạo giải</button>

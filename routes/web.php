@@ -26,7 +26,7 @@ Route::group([
     'prefix' => 'tournaments',
     'as' => 'tournaments.'
 ], function() {
-    Route::get('/create', [\App\Http\Controllers\TournamentController::class, 'create'])->name('create');
+    Route::any('/create', [\App\Http\Controllers\TournamentController::class, 'create'])->name('create');
     Route::get('/manage', [\App\Http\Controllers\TournamentController::class, 'manage'])->name('manage');
     Route::get('/register', [\App\Http\Controllers\TournamentController::class, 'register'])->name('register');
     Route::get('/schedule', [\App\Http\Controllers\TournamentController::class, 'schedule'])->name('schedule');
