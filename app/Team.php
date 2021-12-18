@@ -12,13 +12,12 @@ class Team extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 
-        'coach', 
+        'name',
         'address', 
+        'coach',
+        'tournament_id',
         'logo',
-        'uniform',
         'score',
-        'tournament_id'
+        'uniform'
     ];
-
 }

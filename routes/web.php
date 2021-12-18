@@ -28,7 +28,7 @@ Route::group([
 ], function() {
     Route::any('/create', [\App\Http\Controllers\TournamentController::class, 'create'])->name('create');
     Route::get('/manage', [\App\Http\Controllers\TournamentController::class, 'manage'])->name('manage');
-    Route::get('/register', [\App\Http\Controllers\TournamentController::class, 'register'])->name('register');
+    Route::any('/register', [\App\Http\Controllers\TournamentController::class, 'register'])->name('register');
     Route::get('/schedule', [\App\Http\Controllers\TournamentController::class, 'schedule'])->name('schedule');
     Route::get('/matches', [\App\Http\Controllers\TournamentController::class, 'matches'])->name('matches');
     Route::get('/report', [\App\Http\Controllers\TournamentController::class, 'report'])->name('report');
