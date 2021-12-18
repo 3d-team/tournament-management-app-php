@@ -52,7 +52,7 @@ class TournamentController extends Controller
                 'uniform' => ""
             ]);
             // dd($data);
-            return view('tournaments.manage') ;
+            return view('home.home') ;
         }
         return view('tournaments.register');
     }
