@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tournament;
+use App\Team;
 use Illuminate\Http\Request;
 
 class TournamentController extends Controller
@@ -45,7 +46,8 @@ class TournamentController extends Controller
     }
 
     public function report() {
-        return view('tournaments.report');
+        $teams = Team::all();
+        return view('tournaments.report', compact('teams'));
     }
 
     public function rule() {
