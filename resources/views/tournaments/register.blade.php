@@ -29,11 +29,11 @@
               <h4>Đăng kí tham gia giải đấu</h4>
               <p class="font-weight-light font-italic">Vui lòng nhập thông tin hợp lệ cho các trường được yêu cầu 
                   <span class="text-danger">*</span></p>
-              
+            
               <hr/>
               
-              <form class="pt-3">
-
+              <form class="pt-3" method="post">
+              @csrf
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
@@ -44,7 +44,7 @@
                                   <i class="mdi mdi-account-outline text-primary"></i>
                                 </span>
                               </div>
-                              <input type="text" class="form-control form-control-lg border-left-0" placeholder="Tên đội">
+                              <input name="name" type="text" class="form-control form-control-lg border-left-0" placeholder="Tên đội">
                             </div>
                           </div>
                     </div>
@@ -74,7 +74,7 @@
                                   <i class="mdi mdi-account-outline text-primary"></i>
                                 </span>
                               </div>
-                              <input type="text" class="form-control form-control-lg border-left-0" placeholder="Địa chỉ">
+                              <input name="address" type="text" class="form-control form-control-lg border-left-0" placeholder="Địa chỉ">
                             </div>
                           </div>
                     </div>
@@ -88,7 +88,7 @@
                                   <i class="mdi mdi-account-outline text-primary"></i>
                                 </span>
                               </div>
-                              <input type="text" class="form-control form-control-lg border-left-0" placeholder="Huấn luyện viên">
+                              <input name="coach" type="text" class="form-control form-control-lg border-left-0" placeholder="Huấn luyện viên">
                             </div>
                           </div>
                     </div>
@@ -97,16 +97,16 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label>Số điện thoại</label>
+                            <label>Mã giải đấu</label>
                             <div class="input-group">
                               <div class="input-group-prepend bg-transparent">
                                 <span class="input-group-text bg-transparent border-right-0">
                                   <i class="mdi mdi-account-outline text-primary"></i>
                                 </span>
                               </div>
-                              <input type="text" class="form-control form-control-lg border-left-0" placeholder="Số điện thoại">
+                              <input name="tournament_id" type="text" class="form-control form-control-lg border-left-0" placeholder="Mã giải đấu">
                             </div>
-                          </div>
+                          </div> 
                     </div>
 
                     <div class="col">
@@ -118,7 +118,7 @@
                                   <i class="mdi mdi-email-outline text-primary"></i>
                                 </span>
                               </div>
-                              <input type="email" class="form-control form-control-lg border-left-0" placeholder="Email">
+                              <input id="email" type="email" class="form-control form-control-lg border-left-0" placeholder="Email">
                             </div>
                           </div>
                     </div>
@@ -154,8 +154,14 @@
                   </div>
                 </div>
 
+                <!-- <div class="mt-3">
+                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="#">Xác nhận</a>
+                </div> -->
+
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">Xác nhận</a>
+                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                      Xác nhận
+                    </button>
                 </div>
               </form>
             </div>
