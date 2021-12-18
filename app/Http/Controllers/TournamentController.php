@@ -66,7 +66,8 @@ class TournamentController extends Controller
     }
 
     public function report() {
-        return view('tournaments.report');
+        $teams = Team::all();
+        return view('tournaments.report', compact('teams'));
     }
 
     public function rule() {

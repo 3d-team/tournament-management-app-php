@@ -53,91 +53,22 @@
                                             <th scope="col">Thẻ đỏ</th>
                                           </tr>
                                         </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">1</th>
-                                            <td>Viettel</td>
-                                            <td>0</td>
-                                            <td>0 - 0 - 0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                          </tr>
-
-                                          <tr>
-                                            <th scope="row">2</th>
-                                            <td>Sông Lam Nghệ An</td>
-                                            <td>0</td>
-                                            <td>0 - 0 - 0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                          </tr>
-
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td>Hà Nội T&T</td>
-                                            <td>0</td>
-                                            <td>0 - 0 - 0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                          </tr>
-
-                                          <tr>
-                                            <th scope="row">4</th>
-                                            <td>FLC Thanh Hóa</td>
-                                            <td>0</td>
-                                            <td>0 - 0 - 0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                          </tr>
-
-                                          <tr>
-                                            <th scope="row">5</th>
-                                            <td>HAGL</td>
-                                            <td>0</td>
-                                            <td>0 - 0 - 0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                          </tr>
-
-                                          <tr>
-                                            <th scope="row">6</th>
-                                            <td>Thanh Quảng Ninh</td>
-                                            <td>0</td>
-                                            <td>0 - 0 - 0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                          </tr>
-
-                                          <tr>
-                                            <th scope="row">7</th>
-                                            <td>CLB TP.HCM</td>
-                                            <td>0</td>
-                                            <td>0 - 0 - 0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                          </tr>
-
+                                        <tbody>                                                                    
+                                          @foreach($teams as $team)
+                                            @if($team->coach == "A")
+                                              <tr>  
+                                                <th scope="row">{{ $team->id }}</th>
+                                                <td>{{ $team->name }}</td>
+                                                <td> {{ $num_matches = random_int(1,6)}}</td>
+                                                <td>0 - 0 - 0</td>
+                                                <td> {{$goals = random_int(1,10)}}</td>
+                                                <td>{{random_int(0,4)}}</td>
+                                                <td>0</td>
+                                                <td>{{random_int(0,4)}}</td>
+                                                <td>0</td>
+                                              </tr>
+                                            @endif
+                                          @endforeach
                                           <tr class="table-primary">
                                             <th scope="row" colspan="3">Tổng</th>
                                     
