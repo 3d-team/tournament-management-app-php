@@ -20,6 +20,12 @@ class CreateMatchesTable extends Migration
             $table->string('time');
             $table->string('date')->nullable();
             $table->string('address');
+            $table->integer('goals_1')->nullable();
+            $table->integer('goals_2')->nullable();
+            $table->integer('redcard_1')->nullable();
+            $table->integer('redcard_2')->nullable();
+            $table->integer('yellowcard_1')->nullable();
+            $table->integer('yellowcard_2')->nullable();
             $table->timestamps();
         });
     }
