@@ -12,6 +12,7 @@ class FbMatch extends Model
      *
      * @var array
      */
+
     protected $fillable = [
         'team_1', 
         'team_2', 
