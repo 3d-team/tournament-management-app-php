@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class FbMatch extends Model
 {
+    protected $table = 'matches';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+
     protected $fillable = [
         'team_1', 
         'team_2', 

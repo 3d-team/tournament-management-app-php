@@ -9,6 +9,7 @@
             
             <div class="d-flex bg-light justify-content-between align-items-end 
                 flex-wrap mb-3 mt-3 p-3 border border-dark rounded">
+                @if ($currentTournament)
                 <h3 class="text-dark">{{$currentTournament->name}}</h3>
                 <form  method="GET" action="">
                   <select name="tournament" class="form-select" onchange="this.form.submit()" aria-label="Chọn giải đấu">
@@ -21,7 +22,8 @@
                   </select>
                 </form>
                 <a href="/matches/create?tournament_id=<?= $currentTournament->id ?>" type="button" class="btn btn-success">Thêm trận đấu</a>
-            </div>
+                @endif
+              </div>
 
             <table class="table table-striped table-hover">
                 <thead>
@@ -37,11 +39,11 @@
                 <tbody>
                 @foreach ($matches as $index => $match)
                   <tr>
-                      <th scope="row">{{$match->time}}</th>
-                      <td>{{$fixtures[$index]}}</td>
-                      <td>{{$team_1[$index]->name}}</td>
-                      <td><span class="badge badge-success rounded">{{$team_1[$index]->score}} - {{$team_2[$index]->score}}</span></td>
-                      <td>{{$team_2[$index]->name}}</td>
+                  <th scope="row">{{$match->time}}</th>
+                  <td>{{$fixtures[$index]}}</td>
+                  <td>{{$team_1[$index]->name}}</td>
+                  <td><span class="badge badge-success rounded">{{$match->goals_1}} - {{$match->goals_2}}</span></td>
+                  <td>{{$team_2[$index]->name}}</td>
                       <td>
                         <a href="/matches/edit/<?= $match->id ?>" type="button" class="btn btn-warning mr-2">Sửa</a>
                         <button type="button" class="btn btn-danger" data-id="<?= $match->id ?>"

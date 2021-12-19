@@ -89,7 +89,9 @@ class TournamentController extends Controller
         foreach($matchTournaments as $matchTournament)
         {
             $match = DB::table('matches')
-            ->select('team_1', 'team_2', 'time', 'address')
+            ->select('team_1', 'team_2', 'time', 'address',
+            'goals_1', 'goals_2', 'redcard_1', 'redcard_2',
+            'yellowcard_1', 'yellowcard_2')
             ->where('id', '=', $matchTournament->match_id)
             ->first();
 

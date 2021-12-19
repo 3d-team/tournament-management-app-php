@@ -14,15 +14,15 @@
               {{ csrf_field() }}
               {{ method_field('PUT') }}
               <div class="form-group">
-                <label for="match-team1">ID đội 1<span class="text-danger"> *</span></label>
-                <input type="text" name="team_1" value="<?= $match->team_1?>" class="form-control" id="match-team1" 
-                aria-describedby="emailHelp" placeholder="...1..." required="">
+                <label for="match-team1">Số bàn thắng đội 1<span class="text-danger"> *</span></label>
+                <input type="text" name="goals_1" value="<?= $match->goals_1?>" class="form-control" id="match-team1" 
+                aria-describedby="emailHelp" placeholder="...1...">
               </div>
 
               <div class="form-group">
-                <label for="match-team2">ID đội 2<span class="text-danger"> *</span></label>
-                <input type="text" name="team_2" value="<?= $match->team_2?>" class="form-control" id="match-team2" 
-                placeholder="...2..." required="">
+                <label for="match-team2">Số bàn thắng đội 2<span class="text-danger"> *</span></label>
+                <input type="text" name="goals_2" value="<?= $match->goals_2?>" class="form-control" id="match-team2" 
+                placeholder="...2...">
               </div>
 
               <div class="form-group">

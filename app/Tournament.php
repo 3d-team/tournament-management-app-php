@@ -11,6 +11,9 @@ class Tournament extends Model
      *
      * @var array
      */
+
+    protected $table = 'tournaments';
+
     protected $fillable = [
         'name', 
         'logo', 

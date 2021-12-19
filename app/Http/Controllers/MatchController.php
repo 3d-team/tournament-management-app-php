@@ -49,7 +49,9 @@ class MatchController extends Controller
         foreach($matchTournaments as $matchTournament)
         {
             $match = DB::table('matches')
-            ->select('id', 'team_1', 'team_2', 'time', 'address')
+            ->select('id', 'team_1', 'team_2', 'time', 'address',
+            'goals_1', 'goals_2', 'redcard_1', 'redcard_2',
+            'yellowcard_1', 'yellowcard_2')
             ->where('id', '=', $matchTournament->match_id)
             ->first();
 
@@ -138,7 +140,7 @@ class MatchController extends Controller
         FbMatch::where('id', $id)
         ->update($request->except('_method', '_token', 'fixture'));         
         MatchTournament::where('match_id', $id)
-        ->update($request->except('_method', '_token', 'team_1', 'team_2', 'time', 'address'));        
+        ->update($request->except('_method', '_token', 'goals_1', 'goals_2', 'time', 'address'));        
 
         return redirect()->route('matches.index');
     }
