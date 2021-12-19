@@ -53,31 +53,29 @@
                                             <th scope="col">Thẻ đỏ</th>
                                           </tr>
                                         </thead>
-                                        <tbody>                                                                    
-                                          @foreach($teams as $team)
-                                            @if($team->coach == "A")
+                                        <tbody>                                                               
+                                          @foreach($result as $item)
                                               <tr>  
-                                                <th scope="row">{{ $team->id }}</th>
-                                                <td>{{ $team->name }}</td>
-                                                <td> {{ $num_matches = random_int(1,6)}}</td>
-                                                <td>0 - 0 - 0</td>
-                                                <td> {{$goals = random_int(1,10)}}</td>
-                                                <td>{{random_int(0,4)}}</td>
+                                                <th scope="row">{{ $item["id"] }}</th>
+                                                <td>{{ $item["name"]}}</td>
+                                                <td> {{$item["numMatch"]}}</td>
+                                                <td>{{$item["win"]}} - {{$item["draw"]}} - {{$item["lose"]}}</td>
+                                                <td> {{$item["goals"]}}</td>
+                                                <td>{{$item["goalsConceded"]}}</td>
                                                 <td>0</td>
-                                                <td>{{random_int(0,4)}}</td>
-                                                <td>0</td>
+                                                <td>{{$item["redCard"]}}</td>
+                                                <td>{{$item["yellowCard"]}}</td>
                                               </tr>
-                                            @endif
                                           @endforeach
                                           <tr class="table-primary">
                                             <th scope="row" colspan="3">Tổng</th>
                                     
-                                            <td>0 - 0 - 0</td>
+                                            <td>{{$summary["win"]}} - {{$summary["draw"]}} - {{$summary["lose"]}}</td>
+                                            <td>{{$summary["goals"]}}</td>
+                                            <td>{{$summary["goalsConceded"]}}</td>
                                             <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
+                                            <td>{{$summary["redCard"]}}</td>
+                                            <td>{{$summary["yellowCard"]}}</td>
                                           </tr>
 
                                         </tbody>
@@ -88,7 +86,7 @@
 
                         <div id="tab2" class="tab-pane fade">
                           
-                        </div>
+                        </div>  
 
                       </div>
                 </div>

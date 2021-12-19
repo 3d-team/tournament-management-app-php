@@ -104,7 +104,7 @@
 				</div>
 
 				<div class="text-center mt-4 font-weight-light">
-				  Chưa có tài khoản? <a href="register.html" class="text-primary">Đăng kí</a>
+				  Chưa có tài khoản? <a href="register" class="text-primary">Đăng kí</a>
 				</div>
 			  </form>
 			</div>
