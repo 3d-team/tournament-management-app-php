@@ -59,87 +59,28 @@
                                         <thead>
                                           <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col"></th>
+                                            <th scope="col">Đội nhà</th>
+                                            <th scope="col">Đội khách</th>
                                             <th scope="col">Địa điểm</th>
                                             <th scope="col">Ngày, tháng, năm</th>
                                             <th scope="col">Giờ, phút</th>
                                           </tr>
                                         </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">1</th>
-                                            <td>Viettel - Hà Nội T&T</td>
-                                            <td>Sân Cây Dừa</td>
-                                            <td>30/02/2022</td>
-                                            <td>19h00</td>
-                                          </tr>
-                                          
-                                          <tr>
-                                            <th scope="row">2</th>
-                                            <td>Viettel - Hà Nội T&T</td>
-                                            <td>Sân Cây Dừa</td>
-                                            <td>30/02/2022</td>
-                                            <td>19h00</td>
-                                          </tr>
-
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td>Viettel - Hà Nội T&T</td>
-                                            <td>Sân Cây Dừa</td>
-                                            <td>30/02/2022</td>
-                                            <td>19h00</td>
-                                          </tr>
+                                        <tbody> 
+                                          @foreach ($data as $match)
+                                            <tr>
+                                              <th scope="row">{{ $match->stt }}</th>
+                                              <td>{{ $match->team_1 }}</td>
+                                              <td>{{ $match->team_2 }}</td>
+                                              <td>{{ $match->address }}</td>
+                                              <td>{{ $match->date }}</td>
+                                              <td>{{ $match->time }}</td>
+                                            </tr>
+                                          @endforeach
                                         </tbody>
                                       </table>
                                 </div>
                             </div>
-
-                            <div class="row mb-3">
-                                <div class="col-md-12">
-                                    <p class="card-title">Bảng B</p>
-                                </div>
-                                <hr/>
-                                <div class="col-md-12 stretch-card">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col"></th>
-                                            <th scope="col">Địa điểm</th>
-                                            <th scope="col">Ngày, tháng, năm</th>
-                                            <th scope="col">Giờ, phút</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">1</th>
-                                            <td>Viettel - Hà Nội T&T</td>
-                                            <td>Sân Cây Dừa</td>
-                                            <td>30/02/2022</td>
-                                            <td>19h00</td>
-                                          </tr>
-                                          
-                                          <tr>
-                                            <th scope="row">2</th>
-                                            <td>Viettel - Hà Nội T&T</td>
-                                            <td>Sân Cây Dừa</td>
-                                            <td>30/02/2022</td>
-                                            <td>19h00</td>
-                                          </tr>
-
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td>Viettel - Hà Nội T&T</td>
-                                            <td>Sân Cây Dừa</td>
-                                            <td>30/02/2022</td>
-                                            <td>19h00</td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                </div>
-                            </div>
-                        </div>
-
                         <div id="tab2" class="tab-pane fade">
                           
                         </div>

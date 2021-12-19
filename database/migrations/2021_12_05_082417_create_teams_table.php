@@ -18,10 +18,10 @@ class CreateTeamsTable extends Migration
             $table->string('name');
             $table->string('coach');
             $table->string('address');
-            $table->string('logo');
-            $table->string('uniform');
-            $table->integer('score');
-            $table->integer('tournament_id');
+            $table->string('logo')->nullable();
+            $table->string('uniform')->nullable();
+            $table->integer('score')->nullable();
+            $table->integer('tournament_id')->nullable();
             $table->timestamps();
         });
     }
