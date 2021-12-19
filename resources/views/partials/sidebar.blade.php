@@ -45,7 +45,7 @@
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"><a class="nav-link" href="{{route('tournaments.create')}}">Tạo giải đấu</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('tournaments.schedule')}}">Lịch thi đấu, kết quả</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{route('tournaments.matches')}}">Ghi nhận kết quả trận đấu</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{route('matches.index')}}">Ghi nhận kết quả trận đấu</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('tournaments.manage')}}">Quản lí giải đấu</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('tournaments.report')}}">Lập báo cáo giải đấu</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('tournaments.rule')}}">Thay đổi qui định giải đấu</a></li>
