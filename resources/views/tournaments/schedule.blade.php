@@ -46,7 +46,17 @@
             
             <div class="d-flex bg-light justify-content-between align-items-end 
                 flex-wrap mb-3 mt-3 p-3 border border-dark rounded">
-                <h3 class="text-dark">Giải Movies</h3>
+                <h3 class="text-dark">{{$currentTournament->name}}</h3>
+                <form  method="GET" action="">
+                  <select name="tournament" class="form-select" onchange="this.form.submit()" aria-label="Chọn giải đấu">
+                    <option value="" disabled selected>Chọn giải đấu</option>
+                    @foreach ($tournaments as $tournament)
+                    {
+                      <option value="<?= $tournament->id ?>">{{$tournament->name}}</option>
+                    }
+                    @endforeach
+                  </select>
+                </form>
 
                 <ul class="nav">
                     <li class="nav-item">
@@ -73,60 +83,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">FT - 04/11</th>
-                        <td>Bảng B</td>
-                        <td>Hà Nội T&T</td>
-                        <td><span class="badge badge-success rounded">1 - 1</span></td>
-                        <td>Sông Lam Nghệ An</td>
-                        <td><button class="btn btn-xs btn-dark">></button></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">FT - 03/11</th>
-                        <td>Bảng D</td>
-                        <td>HAGL</td>
-                        <td><span class="badge badge-success rounded">1 - 1</span></td>
-                        <td>Than Quảng Ninh</td>
-                        <td><button class="btn btn-xs btn-dark">></button></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">FT - 02/11</th>
-                        <td>Bảng A</td>
-                        <td>FLC Thanh Hóa</td>
-                        <td><span class="badge badge-success rounded">1 - 1</span></td>
-                        <td>Sông Lam Nghệ An</td>
-                        <td><button class="btn btn-xs btn-dark">></button></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">FT - 04/11</th>
-                        <td>Bảng B</td>
-                        <td>Hà Nội T&T</td>
-                        <td><span class="badge badge-success rounded">1 - 1</span></td>
-                        <td>Sông Lam Nghệ An</td>
-                        <td><button class="btn btn-xs btn-dark">></button></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">FT - 03/11</th>
-                        <td>Bảng D</td>
-                        <td>HAGL</td>
-                        <td><span class="badge badge-success rounded">1 - 1</span></td>
-                        <td>Than Quảng Ninh</td>
-                        <td><button class="btn btn-xs btn-dark">></button></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">FT - 02/11</th>
-                        <td>Bảng A</td>
-                        <td>FLC Thanh Hóa</td>
-                        <td><span class="badge badge-success rounded">1 - 1</span></td>
-                        <td>Sông Lam Nghệ An</td>
-                        <td><button class="btn btn-xs btn-dark">></button></td>
-                    </tr>
-                 
+                @foreach ($matches as $index => $match)
+                  <tr>
+                      <th scope="row">{{$match->time}}</th>
+                      <td>{{$fixtures[$index]}}</td>
+                      <td>{{$team_1[$index]->name}}</td>
+                      <td><span class="badge badge-success rounded">{{$team_1[$index]->score}} - {{$team_2[$index]->score}}</span></td>
+                      <td>{{$team_2[$index]->name}}</td>
+                      <td><button class="btn btn-xs btn-dark">></button></td>
+                  </tr>
+                @endforeach
                 </tbody>
               </table>
         </div>
@@ -134,3 +100,9 @@
     </div>
   </div>
 @endsection
+
+<?php
+  if(isset($_GET["tournament"])){
+    $tournament=$_GET["tournament"];
+  }
+?>
